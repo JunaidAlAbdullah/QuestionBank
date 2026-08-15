@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload a Question — Question Bank</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-navbar"></header>
+
+  <main>
+    <div class="container">
+      <h1 id="page-title">Upload a Question</h1>
+      <p class="text-muted">Uploads are anonymous — only your public username is ever shown.</p>
+
+      <div class="upload-layout">
+        <form id="upload-form" class="form-card" enctype="multipart/form-data" novalidate>
+          <div class="field">
+            <label for="title">Question title</label>
+            <input type="text" id="title" placeholder="e.g. Operating System Midterm — Spring 2026">
+            <div class="field-error hidden" id="err-title"></div>
+          </div>
+
+          <div class="field">
+            <label for="contentType">Content type</label>
+            <select id="contentType"></select>
+            <div class="field-error hidden" id="err-contentType"></div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="courseCode">Course code</label>
+              <input type="text" id="courseCode" placeholder="e.g. CSE325">
+              <div class="field-hint">Automatically converted to upper-case, no spaces.</div>
+              <div class="field-error hidden" id="err-courseCode"></div>
+            </div>
+            <div class="field">
+              <label for="courseName">Course name</label>
+              <input type="text" id="courseName" placeholder="e.g. Operating System">
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="departmentId">Department</label>
+              <select id="departmentId"><option value="">Select department</option></select>
+            </div>
+            <div class="field">
+              <label for="facultyName">Faculty name</label>
+              <input type="text" id="facultyName" placeholder="e.g. Dr. Rahman">
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="semesterName">Semester</label>
+              <select id="semesterName">
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+              </select>
+              <div class="field-error hidden" id="err-semesterName"></div>
+            </div>
+            <div class="field">
+              <label for="year">Year</label>
+              <input type="number" id="year" placeholder="e.g. 2026">
+              <div class="field-error hidden" id="err-year"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="description">Description / notes</label>
+            <textarea id="description" placeholder="Anything future students should know (optional)"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="questionText">Question text</label>
+            <textarea id="questionText" placeholder="Type the question here, or attach file(s) below"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="files">Attach page(s) — up to 2 images, or 1 PDF</label>
+            <input type="file" id="files" accept=".pdf,.png,.jpg,.jpeg,.webp" multiple>
+            <div class="field-hint">Select up to 2 images (e.g. page 1 and page 2) together, or one PDF on its own — up to 10MB each. See the rules panel for a 2-page example →</div>
+            <div id="file-preview-list"></div>
+          </div>
+          <div class="field-error hidden" id="err-files"></div>
+          <div class="field-error hidden" id="err-content"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Upload Question</button>
+        </form>
+
+        <aside class="rules-panel">
+          <h3>Uploading rules</h3>
+
+          <div class="rule-block">
+            <h4>Question has 2 pages?</h4>
+            <p>Select both images together in the file picker (hold Ctrl while clicking, or Shift for a range). Keep the same title, and just add "Part 1" / "Part 2" so it stays one listing.</p>
+            <p class="rule-example"><strong>Example:</strong><br>
+              Title: <em>Operating System Midterm — Part 1</em><br>
+              Title: <em>Operating System Midterm — Part 2</em><br>
+              <span class="text-faint">(or upload both images in a single entry — either works, just stay consistent)</span>
+            </p>
+          </div>
+
+          <div class="rule-block">
+            <h4>Multiple separate quizzes/exams?</h4>
+            <p>If you have "Quiz 1" and "Quiz 2" from different dates, these are <strong>different questions</strong> — upload them as two separate entries, not as pages of one upload.</p>
+            <p class="rule-example"><strong>Example:</strong><br>
+              Title: <em>Data Structures — Quiz 1 Question</em><br>
+              Title: <em>Data Structures — Quiz 2 Question</em>
+            </p>
+          </div>
+
+          <div class="rule-block">
+            <h4>More than 2 pages?</h4>
+            <p>Please combine all pages into a single PDF instead of uploading many images (max 10MB total). A free, easy tool for this:</p>
+            <p><a href="https://www.ilovepdf.com/jpg_to_pdf" target="_blank" rel="noopener noreferrer">Convert JPG to PDF — iLovePDF ↗</a></p>
+          </div>
+
+          <div class="rule-block">
+            <h4>A few more tips</h4>
+            <ul>
+              <li>Take photos in good lighting, straight-on (not at an angle) so text is easy to read.</li>
+              <li>Crop out anything outside the question paper before uploading.</li>
+              <li>Don't re-upload a question that's already on Question Bank — search first.</li>
+              <li>Only PDF, PNG, JPG, or WEBP files are accepted, 10MB max per file.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/upload.js"></script>
+</body>
+</html>

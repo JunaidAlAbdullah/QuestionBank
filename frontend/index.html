@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Bank — Find previous exam questions</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-navbar"></header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-tagline">Be the senior you wish you had.</p>
+        <h1>Find the questions you need.</h1>
+        <p>Search previous university exam questions by course, faculty, semester, and exam type — uploaded by students, for students. Completely anonymous.</p>
+        <div class="hero-actions">
+          <a href="browse.html" class="btn btn-primary">Browse Questions</a>
+          <a href="upload.html" class="btn">Upload a Question</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <form id="home-search-form" class="search-bar" role="search">
+        <input type="search" id="home-search-input" placeholder="Search by course, faculty, or question…" aria-label="Search">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+      <div class="quick-filters" id="quick-filters"></div>
+
+      <div class="section-heading">
+        <h2 class="mb-0">Recent Questions</h2>
+        <a href="browse.html">View all →</a>
+      </div>
+      <div id="recent-questions"></div>
+    </div>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

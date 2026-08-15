@@ -1,0 +1,13 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/browse", "destination": "/browse.html" },
+    { "source": "/upload", "destination": "/upload.html" },
+    { "source": "/question", "destination": "/question.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/my-questions", "destination": "/my-questions.html" },
+    { "source": "/profile", "destination": "/profile.html" }
+  ]
+}

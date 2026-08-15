@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Question Bank</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-navbar"></header>
+
+  <main>
+    <div class="auth-shell">
+      <form id="register-form" class="form-card" style="width:100%;max-width:440px;" novalidate>
+        <h1>Create an account</h1>
+        <p class="text-muted">Your name and email stay private — only a public username is shown to others.</p>
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" autocomplete="name">
+          <div class="field-error hidden" id="err-name"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email">
+          <div class="field-error hidden" id="err-email"></div>
+        </div>
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input type="text" id="studentId" placeholder="2024-3-60-082">
+          <div class="field-hint">Format: 2024-3-60-082</div>
+          <div class="field-error hidden" id="err-studentId"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" autocomplete="new-password">
+            <div class="field-error hidden" id="err-password"></div>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" id="confirmPassword" autocomplete="new-password">
+            <div class="field-error hidden" id="err-confirmPassword"></div>
+          </div>
+        </div>
+        <div class="field-error hidden" id="form-error"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Create account</button>
+        <p class="text-muted" style="margin-top:16px;text-align:center;">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/register.js"></script>
+</body>
+</html>

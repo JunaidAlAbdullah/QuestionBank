@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Questions — Question Bank</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-navbar"></header>
+
+  <main>
+    <div class="container">
+      <div class="section-heading">
+        <h1 class="mb-0">My Questions</h1>
+        <a href="upload.html" class="btn btn-primary btn-sm">Upload a question</a>
+      </div>
+      <p class="text-muted" id="my-count">Loading…</p>
+
+      <div style="display:flex;gap:8px;margin-bottom:20px;">
+        <button class="btn btn-sm active" id="tab-uploads" data-tab="uploads">My Uploads</button>
+        <button class="btn btn-sm" id="tab-bookmarks" data-tab="bookmarks">My Bookmarks</button>
+      </div>
+
+      <div id="my-questions-list"></div>
+      <div id="pagination-mount"></div>
+    </div>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/my-questions.js"></script>
+</body>
+</html>
