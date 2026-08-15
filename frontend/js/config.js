@@ -4,5 +4,5 @@
 window.QB_CONFIG = {
   API_BASE_URL: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:5000/api'
-    : 'https://YOUR-BACKEND-DOMAIN.example.com/api',
+    : 'https://question-bank-api.onrender.com/api',
 };

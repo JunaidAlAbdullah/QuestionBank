@@ -3,7 +3,12 @@ const config = require('./env');
 
 // A shared connection pool. Every controller uses this instead of opening
 // a new connection per request.
-const pool = mysql.createPool({
+//
+// Aiven (and most cloud MySQL hosts) require SSL. Setting DB_SSL=true turns
+// this on. `rejectUnauthorized: false` trusts the host's certificate without
+// needing you to download and configure Aiven's CA file separately — good
+// enough for a student project connecting over a normal internet connection.
+const poolConfig = {
   host: config.db.host,
   port: config.db.port,
   user: config.db.user,
@@ -13,7 +18,13 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   dateStrings: true,
-});
+};
+
+if (config.db.ssl) {
+  poolConfig.ssl = { rejectUnauthorized: false };
+}
+
+const pool = mysql.createPool(poolConfig);
 
 async function testConnection() {
   try {
